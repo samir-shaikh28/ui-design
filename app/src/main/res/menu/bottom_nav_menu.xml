@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_tab_selector"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/galleryFragment"
+        android:icon="@drawable/ic_gallery_tab_selector"
+        android:title="Gallery" />
+
+    <item
+        android:id="@+id/dashboardFragment"
+        android:icon="@drawable/ic_dashboard_tab_selector"
+        android:title="Dashboard" />
+
+    <item
+        android:id="@+id/favouriteFragment"
+        android:icon="@drawable/ic_fav_tab_selector"
+        android:title="Favourite" />
+</menu>

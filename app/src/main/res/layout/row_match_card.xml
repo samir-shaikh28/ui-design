@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="group"
+            type="goodfellowe.pennycuff.designtestplayer.viewModels.ItemMatchCard" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        style="@style/Base.Theme.MaterialCardView"
+        android:layout_width="264dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_first_flag"
+                android:layout_width="24dp"
+                android:src="@drawable/ic_smiling"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_first_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+                android:textColor="@color/primary_text_color"
+                android:maxLines="1"
+                android:text="@{group.matchData.firstTeamCode}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintLeft_toRightOf="@id/img_first_flag"
+                app:layout_constraintRight_toLeftOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@id/img_first_flag"
+                tools:text="SAL" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_second_flag"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:src="@drawable/ic_smiling"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_first_flag" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_second_team"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+                android:maxLines="1"
+                android:textColor="@color/primary_text_color"
+                android:text="@{group.matchData.secondTeamCode}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                app:layout_constraintLeft_toRightOf="@id/img_second_flag"
+                app:layout_constraintRight_toLeftOf="@id/guideline"
+                app:layout_constraintTop_toTopOf="@id/img_second_flag"
+                tools:text="VID" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_notification"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="@dimen/margin_12dp"
+                android:padding="@dimen/padding_6dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_notification" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_first_team_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+                android:maxLines="1"
+                android:text="@{group.matchData.firstTeamScore}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                app:layout_constraintLeft_toRightOf="@id/guideline"
+                app:layout_constraintRight_toLeftOf="@id/img_notification"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="111/7 (10.3 ov)" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_second_team_score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginTop="@dimen/margin_16dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+
+                android:maxLines="1"
+                android:text="@{group.matchData.secondTeamScore}"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                app:layout_constraintLeft_toRightOf="@id/guideline"
+                app:layout_constraintRight_toLeftOf="@id/img_notification"
+                app:layout_constraintTop_toBottomOf="@id/txt_first_team_score"
+                tools:text="*56/3 (5.4 ov)" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lbl_live"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16dp"
+                android:layout_marginLeft="@dimen/margin_16dp"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:background="@drawable/bg_live_tag"
+                android:paddingLeft="@dimen/padding_6dp"
+                android:paddingTop="@dimen/padding_4dp"
+                android:paddingRight="@dimen/padding_6dp"
+                android:paddingBottom="@dimen/padding_4dp"
+                android:text="@string/live"
+                android:textAllCaps="true"
+                android:textColor="@color/live_tag_text_color"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_second_flag" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_live_update"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_12dp"
+                android:layout_marginLeft="@dimen/margin_12dp"
+                android:layout_marginEnd="@dimen/margin_12dp"
+                android:layout_marginRight="@dimen/margin_12dp"
+                app:setSelected="@{group}"
+                android:ellipsize="marquee"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
+                android:textColor="@color/live_update_text_color"
+                app:layout_constraintBottom_toBottomOf="@id/lbl_live"
+                app:layout_constraintLeft_toRightOf="@id/lbl_live"
+                app:layout_constraintRight_toLeftOf="@id/img_notification"
+                app:layout_constraintTop_toTopOf="@+id/lbl_live"
+                android:text="Match stopped due to raining" />
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/lyt_bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12dp"
+                android:background="@drawable/bg_bottom_view"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_16dp"
+                android:paddingRight="@dimen/padding_16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/lbl_live">
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_points_table"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/padding_6dp"
+                    android:paddingRight="@dimen/padding_6dp"
+                    android:text="@string/points_table"
+                    android:textColor="@color/secondary_text_color" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_schedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="@dimen/margin_12dp"
+                    android:layout_marginLeft="@dimen/margin_12dp"
+                    android:background="@android:color/transparent"
+                    android:paddingLeft="@dimen/padding_6dp"
+                    android:paddingRight="@dimen/padding_6dp"
+                    android:text="@string/schedule"
+                    android:textColor="@color/secondary_text_color" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</layout>
